@@ -1,0 +1,70 @@
+.fullscreen {
+    width: 40%;
+}
+
+.fullscreen-user {
+    width: 100%;
+    position: sticky;
+    top: 10%;
+}
+
+.friend-container {
+    width: 100%;
+    position: sticky;
+    top: 10%;
+}
+
+
+.page-user {
+    width: 20%;
+    height: fit-content;
+    top: 10%;
+}
+
+.page-friend-list {
+    width: 20%;
+    height: fit-content;
+    top: 10%;
+}
+
+@media screen and (max-width:1000px) {
+
+    .friend-container {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:1077px) {
+    .page-user {
+        top: 18%;
+        width: 30%;
+    }
+
+    .page-friend-list {
+        top: 18%;
+        width: 26%;
+    }
+}
+
+@media screen and (max-width:700px) {
+
+    .fullscreen,
+    .friend-container {
+        width: 100%;
+    }
+
+    .fullscreen-user {
+        width: 100%;
+        top: 100%;
+
+    }
+
+    .page-friend-list {
+        width: 100%;
+    }
+
+    .page-user {
+        width: 100%;
+        position: relative;
+    }
+}

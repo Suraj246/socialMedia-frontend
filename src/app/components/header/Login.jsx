@@ -33,6 +33,9 @@ const Login = () => {
         }
         dispatch(userLoginApi(username, password))
         handleRefreshClick()
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000)
     };
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 to-indigo-500">

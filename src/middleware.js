@@ -9,7 +9,7 @@ export function middleware(req) {
 
 
     if (!cookie && url.pathname === "/" || 'https://social-media-frontend-tan.vercel.app/') {
-        return NextResponse.rewrite(`${url.origin}/login` || `https://social-media-frontend-ih0dgi7xv-suraj246.vercel.app/login`)
+        return NextResponse.rewrite(`${url.origin}/login`)
     }
     return NextResponse.next()
 }

@@ -8,8 +8,8 @@ export function middleware(req) {
     console.log(url.origin)
 
 
-    if (!cookie && url.pathname === 'https://social-media-frontend-tan.vercel.app/') {
-        return NextResponse.rewrite(`${url.origin}/login`)
+    if (!cookie && url.pathname === "/" || 'https://social-media-frontend-tan.vercel.app/') {
+        return NextResponse.rewrite(`${url.origin}/login` || `https://social-media-frontend-ih0dgi7xv-suraj246.vercel.app/login`)
     }
     return NextResponse.next()
 }

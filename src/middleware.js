@@ -8,7 +8,7 @@ export function middleware(req) {
     console.log(url.origin)
 
 
-    if (!cookie && url.pathname === "/" || 'https://social-media-frontend-tan.vercel.app/') {
+    if (!cookie && url.pathname === "/") {
         return NextResponse.rewrite(`${url.origin}/login`)
     }
     return NextResponse.next()

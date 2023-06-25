@@ -17,12 +17,11 @@ const Login = () => {
     };
 
     useEffect(() => {
-        if (user) {
-            router.push("/")
-            handleRefreshClick()
-
+        if (!user) {
+            return
         }
-    }, [user, router, refreshCount])
+        router.push("/")
+    }, [user, router.push, refreshCount])
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");

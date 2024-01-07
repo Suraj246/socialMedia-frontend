@@ -15,6 +15,7 @@ const Login = () => {
     const handleRefreshClick = () => {
         setRefreshCount(prevCount => prevCount + 1);
     };
+    console.log(user)
 
     useEffect(() => {
         if (!user) {
@@ -34,6 +35,7 @@ const Login = () => {
         }
         dispatch(userLoginApi(username, password))
         handleRefreshClick()
+
     };
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 to-indigo-500">

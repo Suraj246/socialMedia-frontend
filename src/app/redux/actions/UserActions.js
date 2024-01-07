@@ -15,11 +15,15 @@ export const userRegisterApi = (username, email, password) => async (dispatch) =
 }
 
 export const userLoginApi = (username, password) => async (dispatch) => {
+    
     dispatch({ type: USER_LOGIN_REQUEST, payload: username, password })
+    
     try {
         const { data } = await axios.post(`${api}/user/login`, { username: username, password: password })
         dispatch({ type: USER_LOGIN_SUCCESS, payload: data })
         Cookies.set('user', JSON.stringify(data))
+        localStorage.setItem("user",JSON.stringify(data.token))
+
     } catch (error) {
         dispatch({ type: USER_LOGIN_ERROR, payload: error.message })
     }

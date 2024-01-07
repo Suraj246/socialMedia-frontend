@@ -1,13 +1,17 @@
 "use client"
 
+import filterSlice from "./filterSlice"
 import { singleUserDetailsReducer, userDataReducer, userLoginReducer, userRegisterReducer, userUpdateReducer } from "./reducers/UserReducers"
 import { commentReducer, postsCreateReducer, postsReducer } from "./reducers/postsReducers"
 
-const { configureStore, combineReducers } = require("@reduxjs/toolkit")
+const { configureStore, combineReducers} = require("@reduxjs/toolkit")
 
 const initialState = {
     count: 0,
+
 }
+
+
 
 const reducer = combineReducers({
     userRegister: userRegisterReducer,
@@ -18,7 +22,7 @@ const reducer = combineReducers({
     posts: postsReducer,
     createComment: commentReducer,
     singleUser: singleUserDetailsReducer,
-
+productFilter:filterSlice
 
 })
 

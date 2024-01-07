@@ -3,12 +3,12 @@ import Skeleton from 'react-loading-skeleton'
 
 const SkeletonBlog = ({ cards }) => {
     return (
-        <div className="grid grid-cols-1  gap-8">
+        <div className="grid grid-cols-1 gap-8 overflow-hidden">
             {
                 Array(cards).fill(0).map((item, idx) => {
                     return (
                         <div className="rounded-lg overflow-hidden" key={idx}>
-                            <div className="ske-profile flex items-center p-4 ">
+                            <div className="flex items-center p-4 ">
                                 <Skeleton width={50} height={50} style={{ borderRadius: "30px" }} />
                                 <div className="flex justify-between items-center w-full ml-2">
                                     <Skeleton width={70} height={20} />

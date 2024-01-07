@@ -23,7 +23,7 @@ const UserSection = () => {
     return (
         <section className="fullscreen-user">
 
-            <div className="bg-white shadow-md rounded-md p-4 flex flex-col items-center">
+            <div className="bg-white shadow-md rounded-md p-1 flex flex-col items-center mt-3">
                 {loading ? <Ske_User /> : error ? <span className="text-xl font-semibold text-red-800">{error}</span> :
                     <>
 

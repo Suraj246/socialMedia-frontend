@@ -61,11 +61,18 @@ const Profile = () => {
         formData.append("image", image)
         formData.append("location", input.location)
         dispatch(userUpdateApi(formData));
+        router.refresh();
+        router.push("/")
+
+
     };
     const logout = () => {
         Cookies.remove("user")
+        localStorage.clear()
         router.push("/login")
-        handleRefreshClick()
+        // handleRefreshClick()
+        // router.refresh();
+        window.location.reload()
     }
 
     return (

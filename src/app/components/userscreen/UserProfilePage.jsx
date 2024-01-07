@@ -4,11 +4,14 @@ import { UserDataApi, storeFriendIdApi, userApi } from "@/app/redux/actions/User
 import { postDeleteApi } from "@/app/redux/actions/postsActions";
 import Cookies from "js-cookie";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useDispatch, useSelector } from "react-redux";
 
 function UserProfilePage({ params }) {
+    const router = useRouter()
+
     const id = params?.id
     const dispatch = useDispatch()
     const user = Cookies.get('user') ? JSON.parse(Cookies.get('user')) : {}
@@ -29,16 +32,21 @@ function UserProfilePage({ params }) {
         dispatch(UserDataApi(id))
         dispatch(userApi())
 
-    }, [dispatch, refreshCount])
+    }, [dispatch])
 
     const handleDelete = (post_index, postId) => {
         dispatch(postDeleteApi(post_index, postId))
-        handleRefreshClick()
+        // handleRefreshClick()
+        router.refresh()
+        window.location.reload()
+
     }
 
     const sendFriendId = (friendId) => {
         dispatch(storeFriendIdApi(friendId))
-        handleRefreshClick()
+        // handleRefreshClick()
+        router.refresh()
+        window.location.reload()
 
     }
     return (

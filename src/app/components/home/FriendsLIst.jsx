@@ -29,7 +29,7 @@ const FriendsList = () => {
     }
 
     return (
-        <div className="friend-container  p-4">
+        <div className="friend-container p-1 mt-3">
             <h2 className="text-2xl text-center mb-4 text-gray-900">Connections</h2>
             <ul className="divide-y divide-gray-300">
 
